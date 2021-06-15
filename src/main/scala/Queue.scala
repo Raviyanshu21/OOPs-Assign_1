@@ -45,13 +45,13 @@ object Trait extends Queue with App {
     if (rear == -1 && front == -1) {
       front = front + 1
       rear = rear + 1
-      val doubleOfItem = 2 * item // creating a double of the item.
+      val doubleOfItem = 2 * item 
       queue = queue ::: List(doubleOfItem)
       "Item is enqueued.."
     }
     else {
       rear = rear + 1
-      val doubleOfItem = 2 * item // creating a double of the item.
+      val doubleOfItem = 2 * item 
       queue = queue ::: List(doubleOfItem)
       "Item is enqueued.."
     }
