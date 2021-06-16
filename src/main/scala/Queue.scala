@@ -39,19 +39,18 @@ trait Queue {
   }
 }
 
-object Trait extends Queue with App {
-
+class DoubleQueue extends Queue {
   override def enqueue(item: Double): String = {
     if (rear == -1 && front == -1) {
       front = front + 1
       rear = rear + 1
-      val doubleOfItem = 2 * item 
+      val doubleOfItem = 2 * item // double of item
       queue = queue ::: List(doubleOfItem)
       "Item is enqueued.."
     }
     else {
       rear = rear + 1
-      val doubleOfItem = 2 * item 
+      val doubleOfItem = 2 * item  // double of the item.
       queue = queue ::: List(doubleOfItem)
       "Item is enqueued.."
     }
@@ -64,29 +63,35 @@ object Trait extends Queue with App {
   print(getQueue + "\n")
 }
 
- object SquareTrait extends Queue with App {
-   override def enqueue(item: Double): String = {
-     if (rear == -1 && front == -1) {
-       front = front + 1
-       rear = rear + 1
-       val squareOfItem = scala.math.pow(item,2)
-       queue = queue ::: List(squareOfItem)
-       "Item is enqueued.."
-     }
-     else {
-       rear = rear + 1
-       val squareOfItem = scala.math.pow(item,2)
-       queue = queue ::: List(squareOfItem)
-       "Item is enqueued.."
-     }
-   }
-   print(enqueue(5) + "\n")
-   print(enqueue(6) + "\n")
-   print(enqueue(7) + "\n")
-   print(getQueue + "\n")
-   print(dequeue + "\n")
-   print(getQueue + "\n")
+class SquareQueue extends Queue{
+  override def enqueue(item: Double): String = {
+    if (rear == -1 && front == -1) {
+      front = front + 1
+      rear = rear + 1
+      val squareOfItem = scala.math.pow(item,2) //square of item
+      queue = queue ::: List(squareOfItem)
+      "Item is enqueued.."
+    }
+    else {
+      rear = rear + 1
+      val squareOfItem = scala.math.pow(item,2) //square of item
+      queue = queue ::: List(squareOfItem)
+      "Item is enqueued.."
+    }
+  }
+  print(enqueue(5) + "\n")
+  print(enqueue(6) + "\n")
+  print(enqueue(7) + "\n")
+  print(getQueue + "\n")
+  print(dequeue + "\n")
+  print(getQueue + "\n")
+}
+
+object Trait extends Queue with App{
+  var obj = new SquareQueue()
+  var doubleObj = new DoubleQueue()
+}
 
 
- }
+ 
 
